@@ -4,9 +4,12 @@ const { config } = require("yargs");
 
 const ENV = process.env.NODE_ENV || "development";
 
-dotenv.config({ path: `${__dirname}/../.env.${ENV}` });
+dotenv.config({ path: `${__dirname}/../.env.production` });
 
 let uri = process.env.MONGODB_URI;
+
+console.log("Loaded MongoDB URI:", uri);
+
 
 
 if(ENV === "production"){
